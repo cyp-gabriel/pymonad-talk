@@ -24,7 +24,7 @@ post = mchecker(
     validator("age must be greater than 10", lambda p: greater_than(10)(p.age)))
 
 # this is the processing step
-increase_age = lambda p, new_age: copy_namedtuple_except(type(p), p, 'age', getattr(p, 'age') + new_age)
+increase_age = lambda p, new_age: copy_namedtuple_except(type(p), p, 'age', p.age + new_age)
 inc_age = curry2(increase_age)
 
 # set up chain
