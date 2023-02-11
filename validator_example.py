@@ -19,13 +19,9 @@ pre = mchecker(
     validator("Person age must be an adult", lambda p: greater_than(20)(p.age)),
     validator("Person must be male", lambda p: p.sex == 'm'))
 
-x = pre(p)
-
 post = mchecker(
     validator("age must be less than 45", lambda p: less_than(45)(p.age)),
     validator("age must be greater than 10", lambda p: greater_than(10)(p.age)))
-
-x = post(p)
 
 # this is the processing step
 increase_age = lambda p, new_age: copy_namedtuple_except(type(p), p, 'age', getattr(p, 'age') + new_age)
