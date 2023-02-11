@@ -19,8 +19,7 @@ def decrease_value(dec, value):
 inc_30 = increase_value(30)
 dec_50 = decrease_value(50)
 
-res = Just(70) \
-    .then(inc_30) \
-    .then(dec_50)
-
+res = (Just(70)
+       .then(inc_30)
+       .then(dec_50))
 print(res)

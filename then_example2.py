@@ -13,8 +13,8 @@ def decrease_value(value):
     new_value = value - 50
     return Just(new_value) if new_value >= 50 and new_value <= 100 else Nothing
     
-valid_result = Just(100) \
-    .then(increase_value) \
-    .then(decrease_value)
+valid_result = (Just(100)
+                .then(increase_value)
+                .then(decrease_value))
 
 print(valid_result)
