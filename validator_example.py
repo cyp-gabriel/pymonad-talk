@@ -12,7 +12,7 @@ def to_s(p):
 
 fields = ('fname', 'lname', 'age', 'hotness', 'sex')
 Person = namedtuple("Person", fields, defaults=(None,) * len(fields))
-p = Person('bill', 'esquire', 21, 6, 'm')
+p = Person('bill', 'esquire', 25, 6, 'm')
 
 # set up pre- and post-conditions
 pre = mchecker(
