@@ -21,6 +21,13 @@ n = 10
 print(f"\nadd5_to({n}) = {addN_to5(n)}\n")
 
 """
+   With currying you can create expressive APIs
+"""
+
+less_than = curry2(lambda lhs, rhs: lhs < rhs)
+greater_than = curry2(lambda lhs, rhs: lhs > rhs)
+
+"""
    Currying allows you to configure a muli-argument function with n numbe
    of arguments.  When using a pipe or compose, one variable is passed 
    down the chain, currying is useful.
@@ -28,9 +35,8 @@ print(f"\nadd5_to({n}) = {addN_to5(n)}\n")
 
 """Partial 
 
-   Currying functions by evaluating arguments from right to left, whereas
-   partial evaluates arguments from left to right.  Partial is useful for
-   creating expressive APIs and handling *args and *vargs.
+   Currying functions evaluate arguments from right to left, whereas
+   partial evaluates arguments from left to right.
 """
 
 def rgb(r, g, b):
@@ -41,3 +47,11 @@ print(f"red_color(50, 50) = {red_color(50, 50)}")
 
 red_green_color = partial(rgb, 255, 255)
 print(f"red_green_color(37) = {red_green_color(37)}")
+
+
+"""
+   Both functions allow you to configure a function with arguments.
+
+   When setting up a pipeline, we need to create functions that accept
+   one argument: the argument being passed through the pipeline.
+"""

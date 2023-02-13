@@ -1,7 +1,7 @@
 from bc.tools import checker
 from pymonad.either import Left
 
-def mchecker(*args):
+def m_condition(*args):
     c = checker(*args)
     
     def inner(obj):
