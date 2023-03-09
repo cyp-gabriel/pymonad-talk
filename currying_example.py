@@ -55,3 +55,11 @@ print(f"red_green_color(37) = {red_green_color(37)}")
    When setting up a pipeline, we need to create functions that accept
    one argument: the argument being passed through the pipeline.
 """
+
+greater_than10 = greater_than(10)
+
+x = 5
+if greater_than10(x):
+    print("x is greater than 10")
+else:
+    print("x is not greater than 10")

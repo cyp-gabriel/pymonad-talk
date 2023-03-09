@@ -1,4 +1,6 @@
-from pymonad.either import Left
+from bc.tools import validator, curry2, copy_namedtuple_except, less_than, greater_than
+from collections import namedtuple
+from pymonad.either import Either, Left
 
 # encapsulates predicate and error message
 def validator(msg, fn):
@@ -46,3 +48,4 @@ def condition(*args):
             return obj
         
     return inner
+

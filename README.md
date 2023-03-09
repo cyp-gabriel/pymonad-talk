@@ -1,5 +1,9 @@
 [![Contact me on Codementor](https://www.codementor.io/m-badges/boonecabal/find-me-on-cm-b.svg)](https://www.codementor.io/@boonecabal?refer=badge)
 
+## v1.4
+
+* Added and modified several files
+* Preparation for CodeMentor.io talk
 
 ## v1.3
 

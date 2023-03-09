@@ -1,5 +1,4 @@
 from pymonad.either import Either
-from pymonad.maybe import Just
 from pymonad.tools import curry
 
 @curry(2)
@@ -20,3 +19,9 @@ e = (Either.insert(1)
     .then(mul(5))
     .either(lambda e: 0, lambda x: x) # ignore the error and return 0
     ) # 'e' takes the value 0
+print(e)
+
+
+
+
+

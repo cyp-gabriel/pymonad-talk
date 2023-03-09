@@ -98,39 +98,10 @@ def checker(*args):
         return errs
     return inner
 
-def condition(*args):
-    """Configures condition function with validators found in *args
-
-    Raises:
-        Exception: if any validator fails, condition raises exception with all error messages joined with a '; '
-
-    Returns:
-        obj (): configured condition function
-    """
-
-    validators = args
-    
-    def inner(fn, arg):
-        """Configured condition function
-
-        Args:
-            fn (function): function which is called with argument 'arg' if no validators fail.
-            arg (obj): argument passed to 'fn'
-
-        Raises:
-            Exception: if any validator fails, condition raises exception with all error messages joined with a '; '
-
-        Returns:
-            obj (): return value of fn(arg)
-        """
-        errs = [v.msg for v in validators if not v(arg)]
-        if len(errs) > 0:
-            raise Exception('; '.join(errs))
-        return fn(arg)
-    
-    return inner
-
 _identity = curry1(retarg)
 
 less_than = curry2(lambda lhs, rhs: lhs < rhs)
 greater_than = curry2(lambda lhs, rhs: lhs > rhs)
+
+less_than_or_equal_to = curry2(lambda lhs, rhs: lhs <= rhs)
+greater_than_or_equal_to = curry2(lambda lhs, rhs: lhs >= rhs)
